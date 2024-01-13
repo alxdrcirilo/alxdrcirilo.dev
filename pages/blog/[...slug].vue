@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ContentDoc v-slot="{ doc }" style="text-align: justify;">
-      <article>
+    <ContentDoc :path="$route.path">
+      <template v-slot="{ doc }">
         <!-- Header -->
         <header>
           <div class="header">
@@ -45,7 +45,16 @@
         </div>
         <!-- Body -->
         <ContentRenderer :value="doc" style="text-align: justify;" />
-      </article>
+      </template>
+      <!-- Not found -->
+      <template #not-found>
+        <h6 style="text-align: center;">
+          You're not supposed to be here! 🧐
+        </h6>
+        <p style="text-align: center;">
+          Go back to the <NuxtLink id="nav-button" to="/archive">Archive</NuxtLink>
+        </p>
+      </template>
     </ContentDoc>
   </div>
 </template>
@@ -90,7 +99,7 @@ export default {
   border: 1px solid #888;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 85%;
+  font-size: 90%;
   margin-bottom: 16px;
   padding: 4px;
   user-select: none;
