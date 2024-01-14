@@ -75,7 +75,7 @@
         <!-- Footer -->
         <footer>
           <hr />
-          <p>Powered by <a href="https://vuejs.org"><strong>Vue</strong></a> and <a href="https://nuxt.com/"><strong>Nuxt</strong></a>.</p>
+          © 2024 Alexandre Cirilo. Powered by <a href="https://vuejs.org"><strong>Vue</strong></a> and <a href="https://nuxt.com/"><strong>Nuxt</strong></a>.
         </footer>
       </div>
     </div>
@@ -135,7 +135,7 @@ body {
   background: #a0c8fa1a;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 110%;
+  font-size: 1.2rem;
   margin: 0 0.2rem;
   padding: 0.2rem 0.5rem;
 }

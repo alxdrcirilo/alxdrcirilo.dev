@@ -5,14 +5,16 @@
     </header>
     <ul class="toc-links">
       <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link _${link.depth}`">
+        {{ link.enumeration }})
         <a :href="`#${link.id}`" :style="`padding: ${(link.depth - 2) * 4}%`">
-          {{ link.enumeration }}) {{ link.text }}
+          {{ link.text }}
         </a>
         <template v-if="link.children">
           <ul>
             <li v-for="childLink in link.children" :key="childLink.id">
+              {{ childLink.enumeration }})
               <a :href="`#${childLink.id}`">
-                {{ childLink.enumeration }}) {{ childLink.text }}
+                {{ childLink.text }}
               </a>
             </li>
           </ul>

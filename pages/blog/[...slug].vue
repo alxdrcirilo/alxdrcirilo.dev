@@ -5,7 +5,7 @@
         <!-- Header -->
         <header>
           <div class="header">
-            <h1 style="margin: 4px 0;">{{ doc.title }}</h1>
+            <h1 style="font-weight: bold; margin: 4px 0;">{{ doc.title }}</h1>
             <a
             :href="doc.repo"
             target="_blank"
