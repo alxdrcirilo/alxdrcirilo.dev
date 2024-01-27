@@ -15,7 +15,6 @@ export default defineEventHandler(async (event) => {
 
   const blogPosts = docs.filter((doc) => doc?._path?.includes("/blog"));
   for (const doc of blogPosts) {
-    // console.log(Object.keys(doc));
     feed.item({
       title: doc.title ?? "-",
       url: `https://alxdrcirilo.github.io${doc._path}`,

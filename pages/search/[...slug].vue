@@ -2,8 +2,11 @@
   <div>
     <h4 style="display: flex; align-items: center
     ;">🏷️ Posts with tag:&nbsp;
-      <div class="tag">
-        {{ tag }}
+      <div v-if="isAbbreviation(tag)" class="tag">
+        {{ tag.toUpperCase() }}
+      </div>
+      <div v-if="!isAbbreviation(tag)" class="tag">
+        {{ tag.charAt(0).toUpperCase() + tag.slice(1) }}
       </div>
     </h4>
     <div>
@@ -20,10 +23,11 @@
                   <br>
                   <strong>Tags</strong>:
                   <span v-for="tagType in ['field', 'language', 'type']" :key="tagType">
-                    <template v-for="tag in article.tags[tagType]" :key="tag">
+                    <template v-for="tag in article.tags[tagType].sort()" :key="tag">
                       <div class="tags">
                         <NuxtLink :to="`/search/${tagType}?${tag.toLowerCase()}`">
-                          <code class="chip" :style="getTagStyle(tagType)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</code>
+                          <code v-if="isAbbreviation(tag)" class="chip" :style="getTagStyle(tagType)">{{ tag.toUpperCase() }}</code>
+                          <code v-if="!isAbbreviation(tag)" class="chip" :style="getTagStyle(tagType)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</code>
                         </NuxtLink>
                       </div>
                     </template>
@@ -60,6 +64,10 @@ export default {
     };
   },
   methods: {
+    isAbbreviation(property) {
+      const abbrevs = ["dyi"];
+      return abbrevs.includes(property);
+    },
     getTagStyle(property) {
       const colorMap = {
         field: "tomato",
@@ -93,9 +101,14 @@ export default {
 }
 .article-title {
   font-weight: bold;
+  font-size: 120%;
+}
+.article-title:hover {
+  opacity: 0.5;
 }
 .article-details {
   padding-left: 2%;
+  padding-top: 1%;
   font-size: 11px;
 }
 </style>

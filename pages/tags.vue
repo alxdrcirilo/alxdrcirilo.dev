@@ -9,7 +9,8 @@
           <span v-for="tag in getUniqueTags(list, property)" :key="tag">
             <div class="tags">
               <NuxtLink :to="`search/${property}?${tag.toLowerCase()}`">
-                <code class="chip" :style="getTagStyle(property)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</code>
+                          <code v-if="isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ tag.toUpperCase() }}</code>
+                          <code v-if="!isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ capitalize(tag) }}</code>
               </NuxtLink>
             </div>
           </span>
@@ -22,10 +23,14 @@
 <script>
 export default {
   methods: {
+    isAbbreviation(property) {
+      const abbrevs = ["dyi"];
+      return abbrevs.includes(property);
+    },
     getUniqueTags(list, property) {
       // Get unique tags
       const uniqueTags = new Set(list.flatMap((article) => article.tags[property]));
-      return [...uniqueTags];
+      return [...uniqueTags].sort();
     },
     capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);

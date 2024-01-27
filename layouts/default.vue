@@ -74,7 +74,7 @@
         <slot />
         <!-- Footer -->
         <footer>
-          <hr />
+          <hr style="margin-bottom: 20px;"/>
           © 2024 Alexandre Cirilo. Powered by <a href="https://vuejs.org"><strong>Vue</strong></a> and <a href="https://nuxt.com/"><strong>Nuxt</strong></a>.
         </footer>
       </div>
