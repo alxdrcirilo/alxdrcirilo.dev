@@ -52,6 +52,9 @@ export default {
         where: {
           tags: {},
         },
+        sort: {
+          date: 1
+        },
       },
     };
   },
