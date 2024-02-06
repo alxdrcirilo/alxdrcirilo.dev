@@ -6,11 +6,11 @@
       <ul>
         <li v-for="property in ['field', 'language', 'type']" :key="property" style="padding-left: 5%;">
           <u>{{ capitalize(property) }}</u>:
-          <span v-for="tag in getUniqueTags(list, property)" :key="tag">
+          <span v-for="(count, tag) in getUniqueTags(list, property)" :key="tag">
             <div class="tags">
               <NuxtLink :to="`search/${property}?${tag.toLowerCase()}`">
-                          <code v-if="isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ tag.toUpperCase() }}</code>
-                          <code v-if="!isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ capitalize(tag) }}</code>
+                <code v-if="isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ tag.toUpperCase() }}<sup>{{ count }}</sup></code>
+                <code v-if="!isAbbreviation(tag)" class="chip" :style="getTagStyle(property)">{{ capitalize(tag) }}<sup>{{ count }}</sup></code>
               </NuxtLink>
             </div>
           </span>
@@ -28,9 +28,17 @@ export default {
       return abbrevs.includes(property);
     },
     getUniqueTags(list, property) {
-      // Get unique tags
-      const uniqueTags = new Set(list.flatMap((article) => article.tags[property]));
-      return [...uniqueTags].sort();
+      // Get unique tags frequency
+      const tags = list.flatMap((article) => article.tags[property]);
+      const uniqueTags = {};
+      for (let tag of tags.sort()) {
+        if (uniqueTags[tag]) {
+          uniqueTags[tag] += 1;
+        } else {
+          uniqueTags[tag] = 1;
+        }
+      };
+      return uniqueTags;
     },
     capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);

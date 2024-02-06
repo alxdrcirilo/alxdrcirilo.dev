@@ -664,3 +664,8 @@ blockquote {
 .dark-mode blockquote {
   color: #999;
 }
+sup {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  padding-left: 2px;
+}
