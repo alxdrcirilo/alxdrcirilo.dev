@@ -10,23 +10,23 @@ export default defineNuxtConfig({
     ]
   },
   css: [
-    '~/assets/css/main.css',
+    "~/assets/css/main.css",
   ],
   modules: [
-    '@nuxtjs/color-mode',
-    '@nuxt/content',
+    "@nuxtjs/color-mode",
+    "@nuxt/content",
   ],
   colorMode: {
-    preference: 'light',
-    fallback: 'light',
+    preference: "light",
+    fallback: "light",
   },
   content: {
     highlight: {
-      theme: 'dark-plus',
+      theme: "dark-plus",
     },
     markdown: {
       toc: {
-        title: 'Table of Contents',
+        title: "Table of Contents",
         depth: 5,
         searchDepth: 3,
       }
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/rss.xml',
+        "/rss.xml",
       ]
     }
   }
