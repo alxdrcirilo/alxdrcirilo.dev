@@ -2,7 +2,7 @@
   <div>
     <h1>📒 Archive</h1>
     <div v-for="year in years" :key="year">
-      <ContentList :path="`/blog/${year}`" :query="{ sort: [{ date: 1 }] }" v-slot="{ list }">
+      <ContentList :path="`/blog/${year}`" :query="{ sort: [{ _path: -1 }] }" v-slot="{ list }">
         <section>
           <h4>{{ year }}</h4>
           <div v-for="article in list" :key="article._path">

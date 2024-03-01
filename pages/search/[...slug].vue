@@ -53,7 +53,7 @@ export default {
           tags: {},
         },
         sort: {
-          date: 1
+          _path: -1
         },
       },
     };
