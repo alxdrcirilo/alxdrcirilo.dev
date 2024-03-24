@@ -669,3 +669,10 @@ sup {
   font-weight: bolder;
   padding-left: 2px;
 }
+sup > a {
+  font-size: 0.9rem;
+}
+/* Invert SVG color when in dark mode */
+.dark-mode .svg {
+  filter: invert(1);
+}

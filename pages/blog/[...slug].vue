@@ -95,13 +95,6 @@ export default {
 </script>
 
 <style scoped>
-:deep(sup) > a {
-  font-size: 0.9rem;
-}
-.dark-mode :deep(sup) > a {
-  color: pink;
-  font-size: 1rem;
-}
 :deep(li) {
   margin-bottom: 0.4rem;
   margin-left: 2rem;
