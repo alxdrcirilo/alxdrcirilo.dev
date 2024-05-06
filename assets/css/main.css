@@ -277,27 +277,35 @@ p {
 
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a {
-  color: #222;
+a,
+nav > ul > li > a {
+  color: inherit;
   font-size: 1.2rem;
   text-decoration: none;
 }
-.dark-mode a {
-  color: #cecece;
+.dark-mode a,
+.dark-mode nav > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 70%;
 }
 p > a,
+ul > li > a,
 ol > li > a,
 ol > strong > a {
-  color: #222;
+  color: darkolivegreen;
+  font-weight: bold;
   text-decoration: underline;
 }
-p > a:hover {
-  color: saddlebrown;
-  border-radius: 10%;
-}
-.dark-mode p > a:hover {
-  color: tan;
-  border-radius: 10%;
+.dark-mode p > a,
+.dark-mode ul > li > a,
+.dark-mode ol > li > a,
+.dark-mode ol > strong > a {
+  color: #6e8b3d;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* Buttons
@@ -602,6 +610,9 @@ nav {
   justify-content: center;
   width: 80%;
 }
+#nav-button {
+  font-weight: inherit;
+}
 #nav-button:hover {
   opacity: 0.5;
   text-decoration: underline;
@@ -638,6 +649,7 @@ nav {
 }
 .util-icon {
   opacity: 0.5;
+  cursor: pointer;
 }
 .dark-mode .icon {
   color: whitesmoke;

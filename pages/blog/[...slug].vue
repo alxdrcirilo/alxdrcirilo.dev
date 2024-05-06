@@ -134,7 +134,9 @@ export default {
   margin-bottom: 6px;
 }
 :deep(.footnotes *) {
+  color: inherit;
   font-size: 1.1rem;
+  font-weight: normal;
   list-style: decimal;
 }
 :deep(table) {

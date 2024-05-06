@@ -123,10 +123,6 @@ body {
   background-color: #222;
   color: #ebf4f1;
 }
-.dark-mode body {
-  background-color: #222;
-  color: #ebf4f1;
-}
 .delimiter {
   border: 0.5px dashed #555; 
   width: 60%;

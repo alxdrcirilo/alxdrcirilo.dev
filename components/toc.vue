@@ -46,7 +46,17 @@ const flattenLinks = (links, parentEnumeration = []) => {
 </script>
 
 <style scoped>
+a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.dark-mode a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
 a:hover {
- text-decoration: underline; 
+  text-decoration: underline;
 }
 </style>
