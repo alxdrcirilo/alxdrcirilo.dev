@@ -14,4 +14,57 @@
     You can find me around the interwebz with
     <code class="chip" style="border: 1px solid cornflowerblue; cursor: default;">@alxdrcirilo</code>.
   </p>
+  <br>
+  <div>
+    Recent posts:
+    <ContentList :path="`/blog/${year}`" :query="{ sort: [{ date: -1 }], limit: 5 }" v-slot="{ list }">
+      <ul v-for="article in list" :key="article._path">
+        <li>
+          <NuxtLink :to="`${article._path}`" class="article-title">{{ article.title }} ({{ article.date }})</NuxtLink>
+        </li>
+      </ul>
+    </ContentList>
+  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      year: 2024
+    }
+  }
+}
+</script>
+
+<style scoped>
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-end: 1em;
+  margin-block-start: 1em;
+  padding: 0;
+  margin: 0;
+  padding-inline-start: 40px;
+}
+
+li {
+  display: list-item;
+  text-align: match-parent;
+  padding: 1px;
+  margin: 0
+}
+
+li > a,
+.dark-mode li > a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: normal;
+}
+
+li > a:hover,
+.dark-mode li > a:hover {
+  text-decoration: underline;
+}
+</style>
