@@ -5,17 +5,19 @@
     </header>
     <ul class="toc-links">
       <li v-for="link of flattenLinks(links)" :key="link.id" :class="`toc-link _${link.depth}`">
-        {{ link.enumeration }})
-        <a :href="`#${link.id}`" :style="`padding: ${(link.depth - 2) * 4}%`">
-          {{ link.text }}
-        </a>
+        {{ link.enumeration }}) <a :href="`#${link.id}`" :style="`padding: ${(link.depth - 2) * 4}%`">{{ link.text
+          }}</a>
         <template v-if="link.children">
           <ul>
             <li v-for="childLink in link.children" :key="childLink.id">
-              {{ childLink.enumeration }})
-              <a :href="`#${childLink.id}`">
-                {{ childLink.text }}
-              </a>
+              {{ childLink.enumeration }}) <a :href="`#${childLink.id}`">{{ childLink.text }}</a>
+              <template v-if="childLink.children">
+                <ul>
+                  <li v-for="grandChildLink in childLink.children" :key="grandChildLink.id">
+                    {{ grandChildLink.enumeration }}) <a :href="`#${grandChildLink.id}`">{{ grandChildLink.text }}</a>
+                  </li>
+                </ul>
+              </template>
             </li>
           </ul>
         </template>
@@ -51,11 +53,13 @@ a {
   font-weight: inherit;
   text-decoration: none;
 }
+
 .dark-mode a {
   color: inherit;
   font-weight: inherit;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
 }
