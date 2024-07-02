@@ -50,10 +50,9 @@
       </template>
       <!-- Not found -->
       <template #not-found>
-        <h6 style="text-align: center;">
-          You're not supposed to be here! 🧐
-        </h6>
         <p style="text-align: center;">
+          Nothing to see here! 🧐
+          <br>
           Go back to the <NuxtLink id="nav-button" to="/archive">Archive</NuxtLink>
         </p>
       </template>
