@@ -15,10 +15,23 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/color-mode",
     "@nuxt/content",
+    "@nuxt/image"
   ],
   colorMode: {
     preference: "light",
     fallback: "light",
+  },
+  mdc: {
+    highlight: {
+      langs: [
+        "js",
+        "makefile",
+        "python",
+        "shell",
+        "toml",
+        "xml",
+      ],
+    },
   },
   content: {
     highlight: {

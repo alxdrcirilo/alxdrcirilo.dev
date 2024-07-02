@@ -11,10 +11,14 @@
   },
   "private": true,
   "scripts": {
-    "clean": "rm -rf .nuxt .output dist",
+    "clean": "rm -rf .nuxt .output dist node_modules",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "dev": "nuxt dev",
     "generate": "nuxt generate && touch dist/.nojekyll",
     "lint": "eslint app.vue components/*.vue layouts/*.vue pages/*.vue pages/**/*.vue --fix"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/mdc": "^0.8.2"
   }
 }
