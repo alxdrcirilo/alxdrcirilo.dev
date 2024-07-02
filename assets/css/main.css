@@ -281,7 +281,6 @@ p {
 a,
 nav > ul > li > a {
   color: inherit;
-  font-size: 1.2rem;
   text-decoration: none;
 }
 .dark-mode a,
