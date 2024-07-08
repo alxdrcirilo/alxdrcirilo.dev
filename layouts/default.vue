@@ -115,14 +115,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body {
-  background-color: #fcf2ec;
-  color: rgba(0,0,0,0.8);
-}
-.dark-mode body {
-  background-color: #222;
-  color: #ebf4f1;
-}
 .delimiter {
   border: 0.5px dashed #555; 
   width: 60%;

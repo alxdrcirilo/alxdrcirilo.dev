@@ -185,12 +185,16 @@ html {
 body {
   padding: 2%;
   background-color: #fcf2ec;
+  color: #222;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
     monospace;
   font-size: 1.2em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  color: #222;
+}
+.dark-mode body {
+  background-color: #222;
+  color: #ebf4f1;
 }
 
 /* Typography
@@ -687,4 +691,11 @@ sup > a {
 /* Invert SVG color when in dark mode */
 .dark-mode .svg {
   filter: invert(1);
+}
+/* Images */
+img {
+  max-width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
