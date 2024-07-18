@@ -17,7 +17,7 @@
   <br>
   <div>
     Recent posts:
-    <ContentList :path="`/blog/${year}`" :query="{ sort: [{ date: -1 }], limit: 5 }" v-slot="{ list }">
+    <ContentList v-slot="{ list }" :path="`/blog/${year}`" :query="{ sort: [{ date: -1 }], limit: 5 }">
       <ul v-for="article in list" :key="article._path">
         <li>
           <NuxtLink :to="`${article._path}`" class="article-title">{{ article.title }} ({{ article.date }})</NuxtLink>

@@ -27,18 +27,23 @@
 </template>
 
 <script setup>
-defineProps(["links"]);
+defineProps({
+  links: {
+    type: Array,
+    required: true,
+  },
+});
 
 const flattenLinks = (links, parentEnumeration = []) => {
-  let _links = links
+  const _links = links
     .map((link, index) => {
       const linkEnumeration = [...parentEnumeration, index + 1];
-      let _link = {
+      const _link = {
         ...link,
         enumeration: linkEnumeration.join("."),
       };
       if (link.children) {
-        let flattened = flattenLinks(link.children, linkEnumeration);
+        const flattened = flattenLinks(link.children, linkEnumeration);
         _link.children = flattened;
       }
       return _link;

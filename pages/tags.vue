@@ -2,7 +2,7 @@
   <div>
     <h1>🏷️ Tags</h1>
     <p>Here you may find all the tags currently in use:</p>
-    <ContentList path="/blog" v-slot="{ list }">
+    <ContentList v-slot="{ list }" path="/blog">
       <ul>
         <li v-for="tagType in ['field', 'language', 'type']" :key="tagType" style="padding-left: 5%;">
           <u>{{ $capitalize(tagType) }}</u>:

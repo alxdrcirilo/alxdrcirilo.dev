@@ -1,19 +1,18 @@
 <template>
   <div>
     <ContentDoc :path="$route.path">
-      <template v-slot="{ doc }">
+      <template #default="{ doc }">
         <!-- Header -->
         <header>
           <div class="header">
             <h1 style="font-weight: bold; margin: 4px 0;">{{ doc.title }}</h1>
-            <a
-            v-if="doc.repo"
+            <a v-if="doc.repo"
+            id="github-icon"
             :href="doc.repo"
             target="_blank"
-            id="github-icon"
             rel="icon"
             class="fab fa-github icon"
-            ></a>
+            />
           </div>
           <p>{{ doc.description }}</p>
           <p style="margin: 4px 0;"><strong>Date</strong>: {{ new Date(doc.date).toDateString() }}</p>
@@ -32,11 +31,11 @@
         <hr style="margin-bottom: 6px;">
         <!-- Table of contents -->
         <div>
-          <div @click="toggleToc" style="display: inline-flex;">
-              <p class="toc-toggle" v-if="isTocOpen">
+          <div style="display: inline-flex;" @click="toggleToc">
+              <p v-if="isTocOpen" class="toc-toggle">
                 Hide <strong>Table of Contents</strong>
               </p>
-              <p class="toc-toggle" v-if="!isTocOpen">
+              <p v-if="!isTocOpen" class="toc-toggle">
                 Show <strong>Table of Contents</strong>
               </p>
           </div>

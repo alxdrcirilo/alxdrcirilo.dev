@@ -1,16 +1,17 @@
 <template>
   <div>
-    <h4 style="display: flex; align-items: center
-    ;">🏷️ Posts with tag:&nbsp;
+    <h1>🏷️ Tags</h1>
+    <h2 style="display: flex; align-items: center;">
+      Posts with tag:&nbsp;
       <div v-if="$isAbbreviation(tag)" class="tag">
         {{ tag.toUpperCase() }}
       </div>
       <div v-else class="tag">
         {{ $capitalize(tag) }}
       </div>
-    </h4>
+    </h2>
     <div>
-      <ContentList path="/blog" v-slot="{ list }" :query="query">
+      <ContentList v-slot="{ list }" path="/blog" :query="query">
         <section>
           <div v-for="article in list" :key="article._path">
             <!-- Article -->
