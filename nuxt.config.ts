@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/color-mode",
     "@nuxt/content",
+    "@nuxt/eslint",
     "@nuxt/image"
   ],
   colorMode: {

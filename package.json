@@ -3,6 +3,7 @@
   "devDependencies": {
     "@nuxt/content": "^2.10.0",
     "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^0.3.13",
     "@nuxtjs/color-mode": "^3.3.2",
     "nuxt": "^3.8.2",
     "push-dir": "^0.4.1",
@@ -15,7 +16,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
     "dev": "nuxt dev",
     "generate": "nuxt generate && touch dist/.nojekyll",
-    "lint": "eslint app.vue components/*.vue layouts/*.vue pages/*.vue pages/**/*.vue --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
