@@ -18,9 +18,13 @@
                   <span v-for="tagType in ['field', 'language', 'type']" :key="tagType">
                     <template v-for="tag in article.tags[tagType].sort()" :key="tag">
                       <div class="tags">
-                        <NuxtLink :to="`search/${tagType}?${tag.toLowerCase()}`">
-                          <code v-if="isAbbreviation(tag)" class="chip" :style="getTagStyle(tagType)">{{ tag.toUpperCase() }}</code>
-                          <code v-if="!isAbbreviation(tag)" class="chip" :style="getTagStyle(tagType)">{{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</code>
+                        <NuxtLink :to="`search/${tagType}?${tag}`">
+                          <code v-if="$isAbbreviation(tag)" class="chip" :style="$getTagStyle(tagType)">
+                            {{ tag.toUpperCase() }}
+                          </code>
+                          <code v-else class="chip" :style="$getTagStyle(tagType)">
+                            {{ $capitalize(tag) }}
+                          </code>
                         </NuxtLink>
                       </div>
                     </template>
@@ -41,26 +45,6 @@ export default {
     return {
       years: ["2024"],
     };
-  },
-  methods: {
-    isAbbreviation(property) {
-      const abbrevs = ["dyi"];
-      return abbrevs.includes(property);
-    },
-    getTagStyle(property) {
-      const colorMap = {
-        field: "tomato",
-        language: "olivedrab",
-        type: "teal",
-      };
-      return {
-        backgroundColor: colorMap[property],
-        borderRadius: "4px",
-        color: "whitesmoke",
-        fontSize: "11px",
-        marginRight: "10px",
-      };
-    },
   },
 };
 </script>
