@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>🏷️ Tags</h1>
-    <h2 style="display: flex; align-items: center;">
+    <h2 style="display: flex; align-items: center; flex-wrap: wrap;">
       Posts with tag:&nbsp;
       <div v-if="$isAbbreviation(tag)" class="tag">
         {{ tag.toUpperCase() }}

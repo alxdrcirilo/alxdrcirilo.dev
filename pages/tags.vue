@@ -8,7 +8,7 @@
           <u>{{ $capitalize(tagType) }}</u>:
           <span v-for="(count, tag) in getUniqueTags(list, tagType)" :key="tag">
             <div class="tags">
-              <NuxtLink :to="`search/${property}?${tag.toLowerCase()}`">
+              <NuxtLink :to="`search/${tagType}?${tag.toLowerCase()}`">
                 <code v-if="$isAbbreviation(tag)" class="chip" :style="$getTagStyle(tagType)">{{ tag.toUpperCase() }}<sup>{{ count }}</sup></code>
                 <code v-else class="chip" :style="$getTagStyle(tagType)">{{ $capitalize(tag) }}<sup>{{ count }}</sup></code>
               </NuxtLink>
