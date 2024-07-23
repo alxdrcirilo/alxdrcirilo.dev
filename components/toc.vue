@@ -53,13 +53,14 @@ const flattenLinks = (links, parentEnumeration = []) => {
 </script>
 
 <style scoped>
-a {
+a, li {
   color: inherit;
+  font-size: 1.15rem;
   font-weight: inherit;
   text-decoration: none;
 }
 
-.dark-mode a {
+.dark-mode a, li {
   color: inherit;
   font-weight: inherit;
   text-decoration: none;
