@@ -58,9 +58,8 @@ li {
 li > a,
 .dark-mode li > a {
   color: inherit;
-  text-decoration: none;
-  font-size: 1.15rem;
-  font-weight: normal;
+  text-decoration: inherit;
+  font-weight: inherit;
 }
 
 li > a:hover,
