@@ -5,6 +5,7 @@
         <!-- Article -->
         <section class="article-section">
           <NuxtLink :to="`${article._path}`" class="article-title">{{ article.title }}</NuxtLink>
+          <p class="readtime-p"><i class="fa-solid fa-clock"/>{{ article.readtime }} min</p>
           <ul class="article-details">
             <li>{{ article.description }}</li>
             <li>
@@ -75,5 +76,16 @@ export default {
   padding-left: 2%;
   padding-top: 1%;
   font-size: 11px;
+}
+.readtime-p {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  align-items: center;
+}
+.fa-clock {
+  margin-right: 6px;
 }
 </style>
