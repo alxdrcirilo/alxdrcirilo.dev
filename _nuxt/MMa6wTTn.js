@@ -1,0 +1,1 @@
+import{_ as t}from"./BtnbNLkJ.js";import{_ as e,c as r,b as c,a as n,o as s}from"./DhFzIRcp.js";import"./BZgqGLCs.js";import"./wQgezmrq.js";import"./vXYcVh4O.js";import"./wLpKSaeH.js";import"./BWnpENci.js";const a={},_=n("h1",null,"📒 Archive",-1);function p(i,m,l,d,f,u){const o=t;return s(),r("div",null,[_,c(o)])}const N=e(a,[["render",p]]);export{N as default};
